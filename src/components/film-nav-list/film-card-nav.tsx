@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { getFilmNavValue } from '../../store/slices/film-nav-info-slice/selectors';
+import { getFilmNavValue } from '../../store/slices/film-nav-info/selectors';
 import cn from 'classnames';
-import { setFilmNavValue } from '../../store/slices/film-nav-info-slice/film-nav-info-slice';
+import { setFilmNavValue } from '../../store/slices/film-nav-info/film-nav-info';
 import { FILM_NAV_VALUE } from '../../../constants';
 
 type FilmCardNavProps = {

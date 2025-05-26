@@ -12,6 +12,19 @@ export enum AppRoute {
 
 export const FILMS_COUNT = 10;
 
+export enum GenreList {
+  AllGenres = 'All genres',
+  Comedies = 'Comedies',
+  Crime = 'Crime',
+  Documentary = 'Documentary',
+  Dramas = 'Dramas',
+  Horror = 'Horror',
+  KidsAndFamily = 'Kids & Family',
+  Romance = 'Romance',
+  SciFi = 'Sci-Fi',
+  Thrillers = 'Thrillers',
+}
+
 export const GENRES_LIST = [
   'All genres',
   'Comedies',
@@ -56,4 +69,8 @@ export enum FILM_NAV_VALUE {
 
 export enum NameSpace {
   FilmNavInfo = 'FILM_NAV_INFO',
+  Authorization = 'LOGIN',
+  User = 'USER',
+  Films = 'FILMS',
+  Genre = 'GENRE',
 }
