@@ -142,3 +142,48 @@ export const FILMS = [
     genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
   }
 ];
+
+export const REVIEWS = [
+  {
+    id: '1',
+    date: '2016-12-24T12:00:00.000Z',
+    user: 'Kate Muir',
+    comment: 'Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the directors funniest and most exquisitely designed films in years.',
+    rating: 8.9
+  },
+  {
+    id: '2',
+    date: '2015-11-18T12:00:00.000Z',
+    user: 'Bill Goodykoontz',
+    comment: 'Andersons films are too precious for some, but for those of us willing to lose ourselves in them, theyre a delight.The Grand Budapest Hotel is no different, except that he has added a hint of gravitas to the mix, improving the recipe.',
+    rating: 8.0
+  },
+  {
+    id: '3',
+    date: '2015-11-18T12:00:00.000Z',
+    user: 'Amanda Greever',
+    comment: 'I didnt find it amusing, and while I can appreciate the creativity, its an hour and 40 minutes I wish I could take back.',
+    rating: 8.0
+  },
+  {
+    id: '4',
+    date: '2016-12-20T12:00:00.000Z',
+    user: 'Matthew Lickona',
+    comment: 'The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.',
+    rating: 7.2
+  },
+  {
+    id: '5',
+    date: '2016-12-20T12:00:00.000Z',
+    user: 'Paula Fleri-Soler',
+    comment: 'It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.',
+    rating: 7.6
+  },
+  {
+    id: '6',
+    date: '2016-12-20T12:00:00.000Z',
+    user: 'Paula Fleri-Soler',
+    comment: 'It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.',
+    rating: 7.0
+  }
+];

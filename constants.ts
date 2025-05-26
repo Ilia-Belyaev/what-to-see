@@ -47,3 +47,13 @@ export const LOGO_WORDS = [
 ];
 
 export const FILM_NAV_LIST = ['Overview', 'Details', 'Reviews'];
+
+export enum FILM_NAV_VALUE {
+  Overview = 'Overview',
+  Details = 'Details',
+  Reviews = 'Reviews',
+}
+
+export enum NameSpace {
+  FilmNavInfo = 'FILM_NAV_INFO',
+}
