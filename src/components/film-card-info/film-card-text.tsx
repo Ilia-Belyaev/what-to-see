@@ -1,4 +1,4 @@
-export default function FilmCardInfo() {
+export default function FilmCardText() {
   return (
     <div>
       <div className="film-rating">

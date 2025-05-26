@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {AppRoute, AuthorizationStatus} from '../../../constants.ts';
-import Main from '../main/main.tsx';
-import Login from '../login/login.tsx';
-import Film from '../film/film.tsx';
-import Review from '../review/review.tsx';
-import MyList from '../my-list/my-list.tsx';
-import Player from '../player/player.tsx';
-import ErrorScreen from '../error-screen/error-screen.tsx';
-import PrivateRoute from '../../components/private-route/private-route.tsx';
+import Main from '../../pages/main/main.tsx';
+import Login from '../../pages/login/login.tsx';
+import Film from '../../pages/film/film.tsx';
+import Review from '../../pages/review/review.tsx';
+import MyList from '../../pages/my-list/my-list.tsx';
+import Player from '../../pages/player/player.tsx';
+import ErrorScreen from '../../pages/error-screen/error-screen.tsx';
+import PrivateRoute from '../private-route/private-route.tsx';
 
 export default function App() {
   return (

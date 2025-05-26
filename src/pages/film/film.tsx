@@ -1,5 +1,5 @@
 import FavoriteButton from '../../components/favorite-button/favorite-button';
-import FilmCardDesc from '../../components/film-card-desc/film-card-desc';
+import FilmCardInfo from '../../components/film-card-info/film-card-info';
 import LoginMarkup from '../../components/login-markup/login-markup';
 import FooterLogo from '../../components/logo/footer-logo';
 import HeaderLogo from '../../components/logo/header-logo';
@@ -45,13 +45,7 @@ export default function Film() {
         </div>
 
         <div className="film-card__wrap film-card__translate-top">
-          <div className="film-card__info">
-            <div className="film-card__poster film-card__poster--big">
-              <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327" />
-            </div>
-
-            <FilmCardDesc />
-          </div>
+          <FilmCardInfo />
         </div>
       </section>
 

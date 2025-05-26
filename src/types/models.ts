@@ -57,7 +57,7 @@ export type FavoriteFilm = {
   isFavorite: boolean;
 }
 
-export type Comment = {
+export type Review = {
   id: string;
   date: string;
   user: string;
@@ -65,7 +65,7 @@ export type Comment = {
   rating: number;
 }
 
-export type Comments = Comment[]
+export type Reviews = Review[]
 
 export type UserComment = {
   comment: string;
