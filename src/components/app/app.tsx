@@ -6,10 +6,18 @@ import Film from '../../pages/film/film.tsx';
 import Review from '../../pages/review/review.tsx';
 import MyList from '../../pages/my-list/my-list.tsx';
 import Player from '../../pages/player/player.tsx';
-import ErrorScreen from '../../pages/error-screen/error-screen.tsx';
 import PrivateRoute from '../private-route/private-route.tsx';
+import NotFoundScreen from '../../pages/not-found-screen/not-found-screen.tsx';
+import { useAppSelector } from '../../hooks/index.ts';
+import { getAuthStatus } from '../../store/slices/login/selectors.ts';
+// import ErrorScreen from '../../pages/error-screen/error-screen.tsx';
 
 export default function App() {
+  const auth = useAppSelector(getAuthStatus);
+
+  // if (hasError) {
+  //   return <ErrorScreen />
+  // }
   return (
     <BrowserRouter>
       <Routes>
@@ -24,7 +32,7 @@ export default function App() {
         <Route
           path={AppRoute.MyList}
           element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+            <PrivateRoute authorizationStatus={auth}>
               <MyList />
             </PrivateRoute>
           }
@@ -47,7 +55,7 @@ export default function App() {
         />
         <Route
           path={AppRoute.Error}
-          element={<ErrorScreen />}
+          element={<NotFoundScreen />}
         />
       </Routes>
     </BrowserRouter>

@@ -1,6 +1,6 @@
 import { FILM_NAV_VALUE } from '../../../constants';
 import { useAppSelector } from '../../hooks';
-import { getFilmNavValue } from '../../store/slices/film-nav-info-slice/selectors';
+import { getFilmNavValue } from '../../store/slices/film-nav-info/selectors';
 import FilmCardDetails from './film-card-details';
 import FilmCardReviews from './film-card-reviews';
 import FilmCardText from './film-card-text';

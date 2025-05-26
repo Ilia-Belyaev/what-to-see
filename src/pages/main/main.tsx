@@ -4,9 +4,12 @@ import LoginMarkup from '../../components/login-markup/login-markup';
 import FooterLogo from '../../components/logo/footer-logo';
 import HeaderLogo from '../../components/logo/header-logo';
 import GenreList from '../../components/main/genre-list';
-import { FILMS } from '../../mock/mock';
+import { useAppSelector } from '../../hooks';
+import { getFilmsWithCurrentGenre } from '../../store/slices/selectors';
 
 export default function Main() {
+  const currentFilms = useAppSelector(getFilmsWithCurrentGenre);
+
   return (
     <div>
       <section className="film-card">
@@ -61,7 +64,7 @@ export default function Main() {
           <GenreList genres={GENRES_LIST} />
 
           <div className="catalog__films-list">
-            {FILMS.map((film) => <FilmCard film={film} key={film.id}/>)}
+            {currentFilms && currentFilms.map((film) => <FilmCard film={film} key={film.id}/>)}
           </div>
 
           <div className="catalog__more">

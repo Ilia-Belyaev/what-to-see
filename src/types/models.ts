@@ -94,3 +94,7 @@ export type LogoWord = {
   name: string;
   index: number;
 }
+
+export type AuthSlice = {
+  authStatus: AuthStatus;
+}
