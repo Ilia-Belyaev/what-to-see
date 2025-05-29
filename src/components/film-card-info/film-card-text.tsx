@@ -1,22 +1,31 @@
-export default function FilmCardText() {
+import { ratingText, replaceArrayToString } from '../../utils/utils';
+
+type FilmCardTextProps = {
+  description: string;
+  rating: number;
+  scoresCount: number;
+  director: string;
+  starring: [string];
+}
+
+export default function FilmCardText({rating, scoresCount, director, description, starring}: FilmCardTextProps) {
+  const ratingTranscription = ratingText(rating);
+
   return (
     <div>
       <div className="film-rating">
-        <div className="film-rating__score">8,9</div>
+        <div className="film-rating__score">{rating}</div>
         <p className="film-rating__meta">
-          <span className="film-rating__level">Very good</span>
-          <span className="film-rating__count">240 ratings</span>
+          <span className="film-rating__level">{ratingTranscription}</span>
+          <span className="film-rating__count">{`${scoresCount} ratings`}</span>
         </p>
       </div>
 
       <div className="film-card__text">
-        <p>In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustaves friend and protege.</p>
+        {description}
+        <p className="film-card__director"><strong>{`Director: ${director}`}</strong></p>
 
-        <p>Gustave prides himself on providing first-class service to the hotels guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustaves lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.</p>
-
-        <p className="film-card__director"><strong>Director: Wes Anderson</strong></p>
-
-        <p className="film-card__starring"><strong>Starring: Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other</strong></p>
+        <p className="film-card__starring"><strong>{`Starring: ${ starring && replaceArrayToString(starring)}`}</strong></p>
       </div>
     </div>
   );
