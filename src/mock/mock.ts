@@ -1,148 +1,3 @@
-import {GENRES_LIST} from '../../constants';
-
-export const FILMS = [
-  {
-    id: '1',
-    name: 'Fantastic Beasts: The Crimes of Grindelwald',
-    previewImage: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '2',
-    name: 'Bohemian Rhapsody',
-    previewImage: 'img/bohemian-rhapsody.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '3',
-    name: 'Macbeth',
-    previewImage: 'img/macbeth.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '4',
-    name: 'Aviator',
-    previewImage: 'img/aviator.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '5',
-    name: 'We need to talk about Kevin',
-    previewImage: 'img/we-need-to-talk-about-kevin.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '6',
-    name: 'What We Do in the Shadows',
-    previewImage: 'img/what-we-do-in-the-shadows.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '7',
-    name: 'Revenant',
-    previewImage: 'img/revenant.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '8',
-    name: 'Johnny English',
-    previewImage: 'img/johnny-english.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '9',
-    name: 'Shutter Island',
-    previewImage: 'img/shutter-island.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '10',
-    name: 'Pulp Fiction',
-    previewImage: 'img/pulp-fiction.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '11',
-    name: 'No Country for Old Men',
-    previewImage: 'img/no-country-for-old-men.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '12',
-    name: 'Snatch',
-    previewImage: 'img/snatch.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '13',
-    name: 'Moonrise Kingdom',
-    previewImage: 'img/moonrise-kingdom.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '14',
-    name: 'Seven Years in Tibet',
-    previewImage: 'img/seven-years-in-tibet.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '15',
-    name: 'Midnight Special',
-    previewImage: 'img/midnight-special.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '16',
-    name: 'War of the Worlds',
-    previewImage: 'img/war-of-the-worlds.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '17',
-    name: 'Dardjeeling Limited',
-    previewImage: 'img/dardjeeling-limited.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '18',
-    name: 'Orlando',
-    previewImage: 'img/orlando.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '19',
-    name: 'Mindhunter',
-    previewImage: 'img/mindhunter.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  },
-  {
-    id: '20',
-    name: 'Midnight Special',
-    previewImage: 'img/midnight-special.jpg',
-    previewVideoLink: 'film-page.html',
-    genre: GENRES_LIST[Math.floor(Math.random() * GENRES_LIST.length)]
-  }
-];
-
 export const REVIEWS = [
   {
     id: '1',
@@ -185,5 +40,359 @@ export const REVIEWS = [
     user: 'Paula Fleri-Soler',
     comment: 'It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.',
     rating: 7.0
+  }
+];
+
+export const FAKE_PROMO_FILM = {
+  id: 'aba664c3-bdf3-4fb3-b8f3-42e007864bbf',
+  name: 'The Grand Budapest Hotel',
+  posterImage: 'img/bohemian-rhapsody.jpg',
+  backgroundImage: 'img/the-grand-budapest-hotel-poster.jpg',
+  videoLink: 'https://url-to-video/video.mp4',
+  genre: 'Comedy',
+  released: 2014,
+  isFavorite: false
+};
+
+export const FAKE_CURRENT_FILMS = [
+  {
+    id: '1',
+    name: 'Fantastic Beasts: The Crimes of Grindelwald',
+    posterImage: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
+    backgroundImage: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
+    backgroundColor: '#f5f5f5',
+    videoLink: 'https://url-to-video/video.mp4',
+    description: 'Магическое приключение продолжается в мире волшебства и тайн.',
+    rating: 8.5,
+    scoresCount: 876,
+    director: 'David Yates',
+    starring: ['Eddie Redmayne', 'Katherine Waterston', 'Johnny Depp'],
+    runTime: 134,
+    genre: 'Fantasy',
+    released: 2018,
+    isFavorite: false
+  },
+  {
+    id: '2',
+    name: 'Bohemian Rhapsody',
+    posterImage: 'img/bohemian-rhapsody.jpg',
+    backgroundImage: 'img/bohemian-rhapsody.jpg',
+    backgroundColor: '#123456',
+    videoLink: 'film-page.html',
+    description: 'История легендарной группы Queen и её фронтмена Фредди Меркьюри.',
+    rating: 9.1,
+    scoresCount: 1023,
+    director: 'Bryan Singer',
+    starring: ['Rami Malek', 'Lucy Boynton', 'Gwilym Lee'],
+    runTime: 134,
+    genre: 'Drama',
+    released: 2018,
+    isFavorite: true
+  },
+  {
+    id: '3',
+    name: 'Macbeth',
+    posterImage: 'img/macbeth.jpg',
+    backgroundImage: 'img/macbeth.jpg',
+    backgroundColor: '#000000',
+    videoLink: 'film-page.html',
+    description: 'Классическая трагедия Шекспира о жадности и судьбе.',
+    rating: 7.4,
+    scoresCount: 345,
+    director: 'Justin Kurzel',
+    starring: ['Michael Fassbender', 'Marion Cotillard', 'Jack Madigan'],
+    runTime: 113,
+    genre: 'Drama',
+    released: 2015,
+    isFavorite: false
+  },
+  {
+    id: '4',
+    name: 'Aviator',
+    posterImage: 'img/aviator.jpg',
+    backgroundImage: 'img/aviator.jpg',
+    backgroundColor: '#ffffff',
+    videoLink: 'film-page.html',
+    description: 'Биография авиационного пионера Говарда Хьюза.',
+    rating: 7.5,
+    scoresCount: 640,
+    director: 'Martin Scorsese',
+    starring: ['Leonardo DiCaprio', 'Cate Blanchett', 'Kate Beckinsale'],
+    runTime: 170,
+    genre: 'Biography',
+    released: 2004,
+    isFavorite: false
+  },
+  {
+    id: '5',
+    name: 'We need to talk about Kevin',
+    posterImage: 'img/we-need-to-talk-about-kevin.jpg',
+    backgroundImage: 'img/we-need-to-talk-about-kevin.jpg',
+    backgroundColor: '#abcdef',
+    videoLink: 'film-page.html',
+    description: 'Психологический триллер о сложных отношениях матери и сына.',
+    rating: 7.2,
+    scoresCount: 430,
+    director: 'Lynne Ramsay',
+    starring: ['Tilda Swinton', 'John C. Reilly', 'Ezra Miller'],
+    runTime: 112,
+    genre: 'Thriller',
+    released: 2011,
+    isFavorite: true
+  },
+  {
+    id: '6',
+    name: 'What We Do in the Shadows',
+    posterImage: 'img/what-we-do-in-the-shadows.jpg',
+    backgroundImage: 'img/what-we-do-in-the-shadows.jpg',
+    backgroundColor: '#654321',
+    videoLink: 'film-page.html',
+    description: 'Комедия о жизни вампиров в современном мире.',
+    rating: 8.0,
+    scoresCount: 580,
+    director: 'Jemaine Clement',
+    starring: ['Jemaine Clement', 'Taika Waititi', 'Jonathan Brugh'],
+    runTime: 86,
+    genre: 'Comedy',
+    released: 2014,
+    isFavorite: false
+  },
+  {
+    id: '7',
+    name: 'Revenant',
+    posterImage: 'img/revenant.jpg',
+    backgroundImage: 'img/revenant.jpg',
+    backgroundColor: '#333333',
+    videoLink: 'film-page.html',
+    description: 'История выживания охотника в суровой дикой природе.',
+    rating: 8.1,
+    scoresCount: 950,
+    director: 'Alejandro González Iñárritu',
+    starring: ['Leonardo DiCaprio', 'Tom Hardy', 'Domhnall Gleeson'],
+    runTime: 156,
+    genre: 'Adventure',
+    released: 2015,
+    isFavorite: false
+  },
+  {
+    id: '8',
+    name: 'Johnny English',
+    posterImage: 'img/johnny-english.jpg',
+    backgroundImage: 'img/johnny-english.jpg',
+    backgroundColor: '#bbbbbb',
+    videoLink: 'film-page.html',
+    description: 'Шпионская комедия о неуклюжем агенте.',
+    rating: 6.2,
+    scoresCount: 400,
+    director: 'Peter Howitt',
+    starring: ['Rowan Atkinson', 'Natalie Imbruglia', 'Ben Miller'],
+    runTime: 88,
+    genre: 'Comedy',
+    released: 2003,
+    isFavorite: false
+  },
+  {
+    id: '9',
+    name: 'Shutter Island',
+    posterImage: 'img/shutter-island.jpg',
+    backgroundImage: 'img/shutter-island.jpg',
+    backgroundColor: '#222222',
+    videoLink: 'film-page.html',
+    description: 'Триллер о расследовании исчезновения пациента психиатрической клиники.',
+    rating: 8.2,
+    scoresCount: 1020,
+    director: 'Martin Scorsese',
+    starring: ['Leonardo DiCaprio', 'Mark Ruffalo', 'Ben Kingsley'],
+    runTime: 138,
+    genre: 'Thriller',
+    released: 2010,
+    isFavorite: false
+  },
+  {
+    id: '10',
+    name: 'Pulp Fiction',
+    posterImage: 'img/pulp-fiction.jpg',
+    backgroundImage: 'img/pulp-fiction.jpg',
+    backgroundColor: '#ff0000',
+    videoLink: 'film-page.html',
+    description: 'Культовый криминальный фильм Квентина Тарантино.',
+    rating: 9.0,
+    scoresCount: 1560,
+    director: 'Quentin Tarantino',
+    starring: ['John Travolta', 'Uma Thurman', 'Samuel L. Jackson'],
+    runTime: 154,
+    genre: 'Crime',
+    released: 1994,
+    isFavorite: true
+  },
+  {
+    id: '11',
+    name: 'No Country for Old Men',
+    posterImage: 'img/no-country-for-old-men.jpg',
+    backgroundImage: 'img/no-country-for-old-men.jpg',
+    backgroundColor: '#444444',
+    videoLink: 'film-page.html',
+    description: 'Напряжённый криминальный триллер по роману Кормака Маккарти.',
+    rating: 8.1,
+    scoresCount: 920,
+    director: 'Joel Coen',
+    starring: ['Tommy Lee Jones', 'Javier Bardem', 'Josh Brolin'],
+    runTime: 122,
+    genre: 'Crime',
+    released: 2007,
+    isFavorite: false
+  },
+  {
+    id: '12',
+    name: 'Snatch',
+    posterImage: 'img/snatch.jpg',
+    backgroundImage: 'img/snatch.jpg',
+    backgroundColor: '#cccccc',
+    videoLink: 'film-page.html',
+    description: 'Криминальная комедия о поисках украденного алмаза.',
+    rating: 8.3,
+    scoresCount: 1100,
+    director: 'Guy Ritchie',
+    starring: ['Jason Statham', 'Brad Pitt', 'Benicio Del Toro'],
+    runTime: 104,
+    genre: 'Comedy',
+    released: 2000,
+    isFavorite: true
+  },
+  {
+    id: '13',
+    name: 'Moonrise Kingdom',
+    posterImage: 'img/moonrise-kingdom.jpg',
+    backgroundImage: 'img/moonrise-kingdom.jpg',
+    backgroundColor: '#ffeecc',
+    videoLink: 'film-page.html',
+    description: 'Романтическая история о любви и приключениях подростков.',
+    rating: 7.8,
+    scoresCount: 650,
+    director: 'Wes Anderson',
+    starring: ['Jared Gilman', 'Kara Hayward', 'Bruce Willis'],
+    runTime: 94,
+    genre: 'Comedy',
+    released: 2012,
+    isFavorite: false
+  },
+  {
+    id: '14',
+    name: 'Seven Years in Tibet',
+    posterImage: 'img/seven-years-in-tibet.jpg',
+    backgroundImage: 'img/seven-years-in-tibet.jpg',
+    backgroundColor: '#aabbcc',
+    videoLink: 'film-page.html',
+    description: 'Историческая драма о приключениях в Тибете.',
+    rating: 7.1,
+    scoresCount: 420,
+    director: 'Jean-Jacques Annaud',
+    starring: ['Brad Pitt', 'David Thewlis', 'BD Wong'],
+    runTime: 136,
+    genre: 'Adventure',
+    released: 1997,
+    isFavorite: false
+  },
+  {
+    id: '15',
+    name: 'Midnight Special',
+    posterImage: 'img/midnight-special.jpg',
+    backgroundImage: 'img/midnight-special.jpg',
+    backgroundColor: '#112233',
+    videoLink: 'film-page.html',
+    description: 'Таинственный фильм о мальчике с необычными способностями.',
+    rating: 6.6,
+    scoresCount: 390,
+    director: 'Jeff Nichols',
+    starring: ['Michael Shannon', 'Joel Edgerton', 'Kirsten Dunst'],
+    runTime: 112,
+    genre: 'Sci-Fi',
+    released: 2016,
+    isFavorite: false
+  },
+  {
+    id: '16',
+    name: 'War of the Worlds',
+    posterImage: 'img/war-of-the-worlds.jpg',
+    backgroundImage: 'img/war-of-the-worlds.jpg',
+    backgroundColor: '#223344',
+    videoLink: 'film-page.html',
+    description: 'Фантастический фильм об инопланетном вторжении на Землю.',
+    rating: 6.5,
+    scoresCount: 740,
+    director: 'Steven Spielberg',
+    starring: ['Tom Cruise', 'Dakota Fanning', 'Tim Robbins'],
+    runTime: 116,
+    genre: 'Sci-Fi',
+    released: 2005,
+    isFavorite: false
+  },
+  {
+    id: '17',
+    name: 'Dardjeeling Limited',
+    posterImage: 'img/dardjeeling-limited.jpg',
+    backgroundImage: 'img/dardjeeling-limited.jpg',
+    backgroundColor: '#99aabb',
+    videoLink: 'film-page.html',
+    description: 'Комедия-драма о путешествии трёх братьев по Индии.',
+    rating: 7.2,
+    scoresCount: 400,
+    director: 'Wes Anderson',
+    starring: ['Owen Wilson', 'Adrien Brody', 'Jason Schwartzman'],
+    runTime: 91,
+    genre: 'Comedy',
+    released: 2007,
+    isFavorite: false
+  },
+  {
+    id: '18',
+    name: 'Orlando',
+    posterImage: 'img/orlando.jpg',
+    backgroundImage: 'img/orlando.jpg',
+    backgroundColor: '#aa99cc',
+    videoLink: 'film-page.html',
+    description: 'Фантастическая драма о человеке, живущем несколько столетий.',
+    rating: 7.3,
+    scoresCount: 210,
+    director: 'Sally Potter',
+    starring: ['Tilda Swinton', 'Billy Zane', 'Quentin Crisp'],
+    runTime: 93,
+    genre: 'Drama',
+    released: 1992,
+    isFavorite: false
+  },
+  {
+    id: '19',
+    name: 'Mindhunter',
+    posterImage: 'img/mindhunter.jpg',
+    backgroundImage: 'img/mindhunter.jpg',
+    backgroundColor: '#223322',
+    videoLink: 'film-page.html',
+    description: 'Сериал о становлении профайлинга в ФБР.',
+    rating: 8.6,
+    scoresCount: 800,
+    director: 'David Fincher',
+    starring: ['Jonathan Groff', 'Holt McCallany', 'Anna Torv'],
+    runTime: 60,
+    genre: 'Crime',
+    released: 2017,
+    isFavorite: true
+  },
+  {
+    id: '20',
+    name: 'Midnight Special',
+    posterImage: 'img/midnight-special.jpg',
+    backgroundImage: 'img/midnight-special.jpg',
+    backgroundColor: '#112233',
+    videoLink: 'film-page.html',
+    description: 'Таинственный фильм о мальчике с необычными способностями.',
+    rating: 6.6,
+    scoresCount: 390,
+    director: 'Jeff Nichols',
+    starring: ['Michael Shannon', 'Joel Edgerton', 'Kirsten Dunst'],
+    runTime: 112,
+    genre: 'Sci-Fi',
+    released: 2016,
+    isFavorite: false
   }
 ];

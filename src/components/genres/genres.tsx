@@ -5,7 +5,7 @@ type GenreListProps = {
   genres: FilmGenres;
 }
 
-export default function GenreList({genres}: GenreListProps) {
+export default function Genres({genres}: GenreListProps) {
   return (
     <ul className="catalog__genres-list">
       {genres.map((genre) => <Genre genre={genre} key={genre}/>)}

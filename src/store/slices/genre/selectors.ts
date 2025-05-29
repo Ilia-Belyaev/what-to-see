@@ -1,8 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { NameSpace } from '../../../../constants';
 import { State } from '../../../types/state';
-import { FilmGenre } from '../../../types/models';
+import { FilmGenres } from '../../../types/models';
 
-export const takeGenre = (state: Pick<State, NameSpace.Genre>) => state[NameSpace.Genre].genre;
+export const takeGenre = (state: Pick<State, NameSpace.Genre>) => state[NameSpace.Genre].currentGenre;
 
-export const getGenre = createSelector([takeGenre], (genre: FilmGenre) => genre);
+const takeAllGenres = (state: Pick<State, NameSpace.Genre>) => state[NameSpace.Genre].allGenres;
+
+export const getGenre = createSelector([takeGenre], (genre: string) => genre);
+
+export const getAllGenres = createSelector([takeAllGenres], (genres: FilmGenres) => genres);

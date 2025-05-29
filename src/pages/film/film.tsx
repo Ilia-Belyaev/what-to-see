@@ -1,17 +1,24 @@
+import { useParams } from 'react-router-dom';
 import FavoriteButton from '../../components/favorite-button/favorite-button';
 import FilmCardInfo from '../../components/film-card-info/film-card-info';
 import LoginMarkup from '../../components/login-markup/login-markup';
 import FooterLogo from '../../components/logo/footer-logo';
 import HeaderLogo from '../../components/logo/header-logo';
 import ReviewButton from '../../components/review-button/review-button';
+import { FAKE_CURRENT_FILMS } from '../../mock/mock';
+import { CurrentFilm } from '../../types/models';
 
 export default function Film() {
+  const {id} = useParams<{id: string}>();
+  const currentFilm = FAKE_CURRENT_FILMS.find((film) => film.id === id) as CurrentFilm;
+  const {name, posterImage, backgroundImage, backgroundColor, videoLink, genre, released, isFavorite} = currentFilm;
+
   return (
     <div>
       <section className="film-card film-card--full">
         <div className="film-card__hero">
           <div className="film-card__bg">
-            <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
+            <img src={backgroundImage} alt={name} />
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -24,10 +31,10 @@ export default function Film() {
 
           <div className="film-card__wrap">
             <div className="film-card__desc">
-              <h2 className="film-card__title">The Grand Budapest Hotel</h2>
+              <h2 className="film-card__title">{name}</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">Drama</span>
-                <span className="film-card__year">2014</span>
+                <span className="film-card__genre">{genre}</span>
+                <span className="film-card__year">{released}</span>
               </p>
 
               <div className="film-card__buttons">
@@ -44,7 +51,7 @@ export default function Film() {
           </div>
         </div>
 
-        <div className="film-card__wrap film-card__translate-top">
+        <div className="film-card__wrap film-card__translate-top" style={{ backgroundColor: `${backgroundColor}` }}>
           <FilmCardInfo />
         </div>
       </section>
@@ -56,7 +63,7 @@ export default function Film() {
           <div className="catalog__films-list">
             <article className="small-film-card catalog__films-card">
               <div className="small-film-card__image">
-                <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
+                <img src={posterImage} alt={name} width="280" height="175" />
               </div>
               <h3 className="small-film-card__title">
                 <a className="small-film-card__link" href="film-page.html">Fantastic Beasts: The Crimes of Grindelwald</a>

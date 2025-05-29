@@ -1,6 +1,6 @@
 import cn from 'classnames';
-import { FilmGenre, Films, LogoWord } from '../types/models';
-import { GenreList } from '../../constants';
+import { Film, FilmGenres, Films, LogoWord, PromoFilm } from '../types/models';
+import { ALL_GENRES, MINUTES_IN_HOUR, RATING_TRANSCRIPTION } from '../../constants';
 
 export const logoMarkup = (word: LogoWord) => <span className={cn('logo__letter', {'logo__letter--1': word.index === 1}, {'logo__letter--2': word.index === 2}, {'logo__letter--3': word.index === 3},)} key={word.index}>{word.name}</span>;
 
@@ -15,11 +15,63 @@ export const convertFullDate = (date: string) => {
 };
 
 
-export const sortingFilms = (films: Films, genre: FilmGenre) => {
-  if (genre === GenreList.AllGenres) {
+export const sortingFilms = (films: Films, genre: string) => {
+  if (genre === ALL_GENRES) {
     return films;
   }
 
   return films.filter((film) => film.genre === genre);
 };
 
+export const setFavoriteFilm = (favoriteFilms: Films, favoriteFilm: Film) => favoriteFilms.filter((film) => film.id !== favoriteFilm.id);
+
+export const addNewFavoriteFilm = (favoriteFilms: Films, film: PromoFilm) => {
+  const currentFilm = favoriteFilms.find((cinema) => cinema.id === film.id);
+  const replacedFilm = {
+    id: film.id,
+    name: film.name,
+    previewImage: film.posterImage,
+    previewVideoLink: film.videoLink,
+    genre: film.genre,
+  } as Film;
+
+  if(!currentFilm) {
+    return [...favoriteFilms, replacedFilm];
+  }
+
+  return favoriteFilms.filter((cinema) => cinema.id !== film.id);
+};
+
+export const ratingText = (rating: number) => {
+  switch (true) {
+    case rating > 0 && rating <= 3:
+      return RATING_TRANSCRIPTION.Bad;
+    case rating > 3 && rating <= 5:
+      return RATING_TRANSCRIPTION.Normal;
+    case rating > 5 && rating <= 8:
+      return RATING_TRANSCRIPTION.Good;
+    case rating > 8 && rating <= 10:
+      return RATING_TRANSCRIPTION.VeryGood;
+    case rating > 10:
+      return RATING_TRANSCRIPTION.Awesome;
+  }
+};
+
+export const replaceArrayToString = (array: string[]) => array.toString().replaceAll(',', ', ');
+
+export const convertTime = (time: number) => {
+  const hours = time % MINUTES_IN_HOUR;
+  const minutes = time - hours;
+
+  return `${hours}h ${minutes}m`;
+};
+
+export const setGenres = (films: Films) => {
+  const genres = new Set();
+
+  genres.add('All Genres');
+
+  films.map((film) => genres.add(film.genre));
+
+  return Array.from(genres) as FilmGenres;
+};

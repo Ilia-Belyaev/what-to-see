@@ -1,5 +1,3 @@
-import { FilmGenres } from './src/types/models';
-
 export enum AppRoute {
   Main = '/',
   Login = '/login',
@@ -10,33 +8,9 @@ export enum AppRoute {
   Error = '/*',
 }
 
-export const FILMS_COUNT = 10;
+export const FILMS_COUNT = 8;
 
-export enum GenreList {
-  AllGenres = 'All genres',
-  Comedies = 'Comedies',
-  Crime = 'Crime',
-  Documentary = 'Documentary',
-  Dramas = 'Dramas',
-  Horror = 'Horror',
-  KidsAndFamily = 'Kids & Family',
-  Romance = 'Romance',
-  SciFi = 'Sci-Fi',
-  Thrillers = 'Thrillers',
-}
-
-export const GENRES_LIST = [
-  'All genres',
-  'Comedies',
-  'Crime',
-  'Documentary',
-  'Dramas',
-  'Horror',
-  'Kids & Family',
-  'Romance',
-  'Sci-Fi',
-  'Thrillers',
-] as FilmGenres;
+export const ALL_GENRES = 'All Genres';
 
 export enum AuthorizationStatus {
   Auth = 'AUTH',
@@ -73,4 +47,23 @@ export enum NameSpace {
   User = 'USER',
   Films = 'FILMS',
   Genre = 'GENRE',
+  VisibleFilms = 'VISIBLE_FILMS',
+  Promo = 'PROMO_FILM',
+  Favorite = 'FAVORITE',
+  CurrentFilm = 'CURRENT_FILM',
+}
+
+export enum RATING_TRANSCRIPTION {
+  Bad = 'Bad',
+  Normal = 'Normal',
+  Good = 'Good',
+  VeryGood = 'Very good',
+  Awesome = 'Awesome',
+}
+
+export const MINUTES_IN_HOUR = 60;
+
+export enum ApiRoute {
+  Films = '/films',
+  PromoFilm = '/promo',
 }

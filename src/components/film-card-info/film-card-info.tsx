@@ -1,4 +1,3 @@
-// import { Link } from 'react-router-dom';
 import { FILM_NAV_LIST } from '../../../constants';
 import FilmCardNav from '../film-nav-list/film-card-nav';
 import { FilmCardHOC } from './film-card-hoc';
