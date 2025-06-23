@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace } from '../../../../constants';
 import { PromoFilm } from '../../../types/models';
-import { setFavoritePromoFilm, setPromoFilm } from './actions';
+import { setPromoFilm } from './actions';
 import { fetchPromoFilmAction } from '../api-actions';
 
 export const promoFilm = createSlice({
@@ -16,9 +16,6 @@ export const promoFilm = createSlice({
     builder
       .addCase(setPromoFilm, (state, action) => {
         state.promo = action.payload;
-      })
-      .addCase(setFavoritePromoFilm, (state) => {
-        state.promo.isFavorite = !state.promo.isFavorite;
       })
       .addCase(fetchPromoFilmAction.pending, (state) => {
         state.isPromoLoaded = true;

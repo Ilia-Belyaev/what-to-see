@@ -51,6 +51,8 @@ export enum NameSpace {
   Promo = 'PROMO_FILM',
   Favorite = 'FAVORITE',
   CurrentFilm = 'CURRENT_FILM',
+  Similar = 'SIMILAR_FILMS',
+  Reviews = 'REVIEWS',
 }
 
 export enum RATING_TRANSCRIPTION {
@@ -66,4 +68,19 @@ export const MINUTES_IN_HOUR = 60;
 export enum ApiRoute {
   Films = '/films',
   PromoFilm = '/promo',
+  Login = '/login',
+  Logout = '/logout',
+  Favorite = '/favorite',
 }
+
+export enum ErrorMessages {
+  NoID = 'ID не передан',
+  FailLoadData = 'Не удалось загрузить данные',
+  FailAddFavorite = 'Не удалось добавить/удалить избранное',
+}
+
+export const REVIEWS_LENGTH = 1;
+
+export const MIN_REVIEW_LENGTH = 50;
+
+export const MAX_REVIEW_LENGTH = 400;

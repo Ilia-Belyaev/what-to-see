@@ -1,17 +1,20 @@
-import { useParams } from 'react-router-dom';
 import FavoriteButton from '../../components/favorite-button/favorite-button';
-import FilmCardInfo from '../../components/film-card-info/film-card-info';
 import LoginMarkup from '../../components/login-markup/login-markup';
 import FooterLogo from '../../components/logo/footer-logo';
 import HeaderLogo from '../../components/logo/header-logo';
 import ReviewButton from '../../components/review-button/review-button';
-import { FAKE_CURRENT_FILMS } from '../../mock/mock';
-import { CurrentFilm } from '../../types/models';
+import { NearFilmsMemo } from '../../components/near-films/near-films';
+import { CurrentFilm, Films } from '../../types/models';
+import { FilmCardInfoHOC } from '../../components/film-card-info/film-card-info-hoc';
 
-export default function Film() {
-  const {id} = useParams<{id: string}>();
-  const currentFilm = FAKE_CURRENT_FILMS.find((film) => film.id === id) as CurrentFilm;
-  const {name, posterImage, backgroundImage, backgroundColor, videoLink, genre, released, isFavorite} = currentFilm;
+type FilmProps = {
+  film: CurrentFilm;
+  similarFilms: Films;
+}
+
+export default function Film({film, similarFilms}: FilmProps) {
+
+  const {name, backgroundImage, backgroundColor, genre, released} = film;//videoLink isFavorite
 
   return (
     <div>
@@ -52,51 +55,14 @@ export default function Film() {
         </div>
 
         <div className="film-card__wrap film-card__translate-top" style={{ backgroundColor: `${backgroundColor}` }}>
-          <FilmCardInfo />
+          <FilmCardInfoHOC />
         </div>
       </section>
 
       <div className="page-content">
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
-
-          <div className="catalog__films-list">
-            <article className="small-film-card catalog__films-card">
-              <div className="small-film-card__image">
-                <img src={posterImage} alt={name} width="280" height="175" />
-              </div>
-              <h3 className="small-film-card__title">
-                <a className="small-film-card__link" href="film-page.html">Fantastic Beasts: The Crimes of Grindelwald</a>
-              </h3>
-            </article>
-
-            <article className="small-film-card catalog__films-card">
-              <div className="small-film-card__image">
-                <img src="img/bohemian-rhapsody.jpg" alt="Bohemian Rhapsody" width="280" height="175" />
-              </div>
-              <h3 className="small-film-card__title">
-                <a className="small-film-card__link" href="film-page.html">Bohemian Rhapsody</a>
-              </h3>
-            </article>
-
-            <article className="small-film-card catalog__films-card">
-              <div className="small-film-card__image">
-                <img src="img/macbeth.jpg" alt="Macbeth" width="280" height="175" />
-              </div>
-              <h3 className="small-film-card__title">
-                <a className="small-film-card__link" href="film-page.html">Macbeth</a>
-              </h3>
-            </article>
-
-            <article className="small-film-card catalog__films-card">
-              <div className="small-film-card__image">
-                <img src="img/aviator.jpg" alt="Aviator" width="280" height="175" />
-              </div>
-              <h3 className="small-film-card__title">
-                <a className="small-film-card__link" href="film-page.html">Aviator</a>
-              </h3>
-            </article>
-          </div>
+          <NearFilmsMemo films={similarFilms}/>
         </section>
 
         <FooterLogo />

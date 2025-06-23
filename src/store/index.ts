@@ -11,6 +11,8 @@ import { favoriteFilms } from './slices/favorite-films/favorite-films';
 import { currentFilm } from './slices/current-film/current-film';
 import { createAPI } from '../services/api';
 import { redirect } from './middlewares/redirect';
+import { similarFilms } from './slices/similar-films/similar-films';
+import { reviews } from './slices/reviews/reviews';
 
 const api = createAPI();
 
@@ -24,6 +26,8 @@ export const createRootReducer = combineReducers({
   [NameSpace.Promo]: promoFilm.reducer,
   [NameSpace.Favorite]: favoriteFilms.reducer,
   [NameSpace.CurrentFilm]: currentFilm.reducer,
+  [NameSpace.Similar]: similarFilms.reducer,
+  [NameSpace.Reviews]: reviews.reducer,
 });
 
 export const store = configureStore({

@@ -26,6 +26,8 @@ export type CurrentFilm = {
   isFavorite: boolean;
 }
 
+export type SimilarFilms = CurrentFilm[];
+
 export type PromoFilm = {
   id: string;
   name: string;
@@ -57,6 +59,8 @@ export type FavoriteFilm = {
   isFavorite: boolean;
 }
 
+export type FavoriteFilms = FavoriteFilm[];
+
 export type Review = {
   id: string;
   date: string;
@@ -66,6 +70,12 @@ export type Review = {
 }
 
 export type Reviews = Review[]
+
+export type UserReview = {
+  comment: string;
+  rating: number;
+  filmId: string;
+}
 
 export type UserComment = {
   comment: string;
@@ -95,4 +105,17 @@ export type LogoWord = {
 
 export type AuthSlice = {
   authStatus: AuthStatus;
+}
+
+
+export type CurrentFilmId = string | undefined;
+
+export type AuthData = {
+  login: string | null;
+  password: string | null;
+}
+
+export type FavoriteFilmData = {
+  id: string;
+  isFavorite: boolean;
 }

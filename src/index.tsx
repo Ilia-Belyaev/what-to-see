@@ -6,15 +6,16 @@ import { store } from './store';
 import HistoryRouter from './components/history-router/history-router';
 import browserHistory from './browser-history';
 import { ToastContainer } from 'react-toastify';
-import { fetchFilmAction, fetchPromoFilmAction } from './store/slices/api-actions';
-// import { getToken } from './services/token';
+import { checkAuthAction, fetchFilmAction, fetchPromoFilmAction, getUserData } from './store/slices/api-actions';
+import { getToken } from './services/token';
 
 store.dispatch(fetchFilmAction());
 store.dispatch(fetchPromoFilmAction());
+store.dispatch(checkAuthAction());
 
-// if (getToken()) {
-//   // store.dispatch(getUserData());
-// }
+if (getToken()) {
+  store.dispatch(getUserData());
+}
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

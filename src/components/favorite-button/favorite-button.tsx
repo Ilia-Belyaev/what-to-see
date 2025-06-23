@@ -3,15 +3,20 @@ import { AppRoute, AuthorizationStatus } from '../../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getFavoriteFilms } from '../../store/slices/favorite-films/selectors';
 import { getAuthStatus } from '../../store/slices/login/selectors';
-import { Navigate } from 'react-router-dom';
-import { setFavoritePromoFilm } from '../../store/slices/promo-film/actions';
+import { Navigate, useParams } from 'react-router-dom';
 import { getPromoFilm } from '../../store/slices/promo-film/selectors';
-import { replaceFilm } from '../../store/slices/favorite-films/actions';
+// import { replaceFilm } from '../../store/slices/favorite-films/actions';
+import { addFavoriteFilm } from '../../store/slices/api-actions';
+import { getCurrentFilm } from '../../store/slices/current-film/selectors';
+import { changeIsFavoriteCurrentFilm } from '../../store/slices/current-film/actions';
 
 export default function FavoriteButton() {
+  let {id} = useParams<string>();
   const dispatch = useAppDispatch();
   const favoriteFilms = useAppSelector(getFavoriteFilms);
   const promoFilm = useAppSelector(getPromoFilm);
+  const currentFilm = useAppSelector(getCurrentFilm);
+  let isFavorite = currentFilm.isFavorite;
   const auth = useAppSelector(getAuthStatus);
   const [redirectToLogin, setRedirectToLogin] = useState(false);
   const onButtonClick = () => {
@@ -21,10 +26,13 @@ export default function FavoriteButton() {
       return;
     }
 
-    //dispatch в избранное на сервак api-actions
-    dispatch(setFavoritePromoFilm());
-    dispatch(replaceFilm(promoFilm));
-    //
+    if (!id) {
+      id = promoFilm.id;
+      isFavorite = promoFilm.isFavorite;
+    }
+
+    dispatch(addFavoriteFilm({id, isFavorite}));
+    dispatch(changeIsFavoriteCurrentFilm());
   };
 
   if (redirectToLogin) {

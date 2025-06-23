@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '../../hooks';
-import { getUsetData } from '../../store/slices/user/selectors';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { getUserData } from '../../store/slices/user/selectors';
+import { logoutAction } from '../../store/slices/api-actions';
 
 export default function LoginAuthMarkup () {
-  // const dispatch = useAppDispatch();
-  // const handleClick = () => dispatch(logoutAction());//разлогиниться
-  const user = useAppSelector(getUsetData);
+  const dispatch = useAppDispatch();
+  const handleClick = () => {
+    dispatch(logoutAction());
+  };
+  const user = useAppSelector(getUserData);
   const {avatarUrl} = user;
 
   return (
@@ -16,7 +19,7 @@ export default function LoginAuthMarkup () {
         </Link>
       </li>
       <li className="user-block__item">
-        <a className="user-block__link">Sign out</a>{/* onClick = {handleClick} */}
+        <a className="user-block__link" onClick={handleClick}>Sign out</a>
       </li>
     </ul>
   );
