@@ -1,13 +1,13 @@
 import FilmCard from '../../components/film-card/film-card';
 import Genres from '../../components/genres/genres';
-import LoginMarkup from '../../components/login-markup/login-markup';
+// import LoginMarkup from '../../components/login-markup/login-markup';
 import FooterLogo from '../../components/logo/footer-logo';
-import HeaderLogo from '../../components/logo/header-logo';
-import PromoFilm from '../../components/promo-film/promo-film';
-import { useAppSelector } from '../../hooks';
-import { getAllGenres } from '../../store/slices/genre/selectors';
-import { getPromoFilm } from '../../store/slices/promo-film/selectors';
+// import HeaderLogo from '../../components/logo/header-logo';
+// import PromoFilm from '../../components/promo-film/promo-film';
+// import { useAppSelector } from '../../hooks';
+// import { getPromoFilm } from '../../store/slices/promo-film/selectors';
 import { Films } from '../../types/models';
+import { MainFilmCardMemo } from './main-film-card';
 
 type MainProps = {
   films: Films;
@@ -16,9 +16,6 @@ type MainProps = {
 }
 
 export default function Main({films, currentFilms, onShowMore} : MainProps) {
-  const promoFilm = useAppSelector(getPromoFilm);
-  const genres = useAppSelector(getAllGenres);
-  const {backgroundImage, name} = promoFilm;
   const onButtonClick = () => {
     onShowMore();
   };
@@ -26,26 +23,13 @@ export default function Main({films, currentFilms, onShowMore} : MainProps) {
 
   return (
     <div>
-      <section className="film-card">
-        <div className="film-card__bg">
-          <img src={backgroundImage} alt={name} />
-        </div>
-
-        <h1 className="visually-hidden">WTW</h1>
-
-        <header className="page-header film-card__head">
-          <HeaderLogo />
-          <LoginMarkup />
-        </header>
-
-        <PromoFilm/>
-      </section>
+      <MainFilmCardMemo />
 
       <div className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-          <Genres genres={genres} />
+          <Genres/>
 
           <div className="catalog__films-list">
             {currentFilms && currentFilms.map((film) => <FilmCard film={film} key={film.id}/>)}

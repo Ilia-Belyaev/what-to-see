@@ -13,8 +13,6 @@ export default function FilmCard ({film}: FilmCardProps) {
   };
 
   if(redirectToFilm) {
-    //dispatch из api-action, внутри которого будет диспатч в стор текущим фильмом
-    //dispatch из api-action внутри которого будет диспатч в стор с похожими фильмами
     return <Navigate to={`/films/${id}`} />;
   }
 

@@ -1,11 +1,11 @@
-import { FilmGenres } from '../../types/models';
+import { useAppSelector } from '../../hooks';
+import { getAllGenres } from '../../store/slices/genre/selectors';
 import Genre from './genre';
 
-type GenreListProps = {
-  genres: FilmGenres;
-}
 
-export default function Genres({genres}: GenreListProps) {
+export default function Genres() {
+  const genres = useAppSelector(getAllGenres);
+
   return (
     <ul className="catalog__genres-list">
       {genres.map((genre) => <Genre genre={genre} key={genre}/>)}

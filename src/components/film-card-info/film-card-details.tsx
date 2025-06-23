@@ -1,14 +1,11 @@
+import { useAppSelector } from '../../hooks';
+import { getCurrentFilm } from '../../store/slices/current-film/selectors';
 import { convertTime, replaceArrayToString } from '../../utils/utils';
 
-type FilmCardDetailsProps = {
-  director: string;
-  starring: [string];
-  runTime: number;
-  genre: string;
-  released: number;
-}
+export default function FilmCardDetails() {
+  const currentFilm = useAppSelector(getCurrentFilm);
+  const {director, starring, runTime, genre, released} = currentFilm;
 
-export default function FilmCardDetails({director, starring, runTime, genre, released}: FilmCardDetailsProps) {
   return (
     <div className="film-card__text film-card__row">
       <div className="film-card__text-col">

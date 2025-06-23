@@ -1,8 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import {AppRoute, AuthorizationStatus} from '../../../constants.ts';
 import Login from '../../pages/login/login.tsx';
-import Film from '../../pages/film/film.tsx';
-import Review from '../../pages/review/review.tsx';
 import MyList from '../../pages/my-list/my-list.tsx';
 import Player from '../../pages/player/player.tsx';
 import PrivateRoute from '../private-route/private-route.tsx';
@@ -13,13 +11,15 @@ import { MainScreenHOC } from '../main-screen-hoc/main-screen-hoc.tsx';
 import { getErrorStatus, getLoadingStatus } from '../../store/slices/films/selectors.ts';
 import ErrorScreen from '../../pages/error-screen/error-screen.tsx';
 import Loading from '../../pages/loading/loading.tsx';
+import { FilmHOC } from '../film-hoc/film-hoc.tsx';
+import { ReviewHOC } from '../../pages/review/review-hoc.tsx';
 
 export default function App() {
   const auth = useAppSelector(getAuthStatus);
   const hasError = useAppSelector(getErrorStatus);
   const isDataLoading = useAppSelector(getLoadingStatus);
 
-  if(isDataLoading) {
+  if(isDataLoading || auth === AuthorizationStatus.Unknown) {
     return <Loading />;
   }
 
@@ -51,13 +51,13 @@ export default function App() {
       />
       <Route
         path={AppRoute.Film}
-        element={<Film />}
+        element={<FilmHOC />}
       />
       <Route
         path={AppRoute.AddReview}
         element={
-          <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-            <Review />
+          <PrivateRoute authorizationStatus={auth}>
+            <ReviewHOC />
           </PrivateRoute>
         }
       />

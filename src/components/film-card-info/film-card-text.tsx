@@ -1,14 +1,10 @@
+import { useAppSelector } from '../../hooks';
+import { getCurrentFilm } from '../../store/slices/current-film/selectors';
 import { ratingText, replaceArrayToString } from '../../utils/utils';
 
-type FilmCardTextProps = {
-  description: string;
-  rating: number;
-  scoresCount: number;
-  director: string;
-  starring: [string];
-}
-
-export default function FilmCardText({rating, scoresCount, director, description, starring}: FilmCardTextProps) {
+export default function FilmCardText() {
+  const currentFilm = useAppSelector(getCurrentFilm);
+  const { description, rating, scoresCount, director, starring} = currentFilm;
   const ratingTranscription = ratingText(rating);
 
   return (

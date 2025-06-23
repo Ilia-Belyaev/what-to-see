@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { Film, FilmGenres, Films, LogoWord, PromoFilm } from '../types/models';
+import { FavoriteFilm, FavoriteFilms, FilmGenres, Films, LogoWord } from '../types/models';
 import { ALL_GENRES, MINUTES_IN_HOUR, RATING_TRANSCRIPTION } from '../../constants';
 
 export const logoMarkup = (word: LogoWord) => <span className={cn('logo__letter', {'logo__letter--1': word.index === 1}, {'logo__letter--2': word.index === 2}, {'logo__letter--3': word.index === 3},)} key={word.index}>{word.name}</span>;
@@ -23,20 +23,13 @@ export const sortingFilms = (films: Films, genre: string) => {
   return films.filter((film) => film.genre === genre);
 };
 
-export const setFavoriteFilm = (favoriteFilms: Films, favoriteFilm: Film) => favoriteFilms.filter((film) => film.id !== favoriteFilm.id);
+export const setFavoriteFilm = (favoriteFilms: FavoriteFilms, favoriteFilm: FavoriteFilm) => favoriteFilms.filter((film) => film.id !== favoriteFilm.id);
 
-export const addNewFavoriteFilm = (favoriteFilms: Films, film: PromoFilm) => {
+export const addNewFavoriteFilm = (favoriteFilms: FavoriteFilms, film: FavoriteFilm) => {
   const currentFilm = favoriteFilms.find((cinema) => cinema.id === film.id);
-  const replacedFilm = {
-    id: film.id,
-    name: film.name,
-    previewImage: film.posterImage,
-    previewVideoLink: film.videoLink,
-    genre: film.genre,
-  } as Film;
 
   if(!currentFilm) {
-    return [...favoriteFilms, replacedFilm];
+    return [...favoriteFilms, film];
   }
 
   return favoriteFilms.filter((cinema) => cinema.id !== film.id);
