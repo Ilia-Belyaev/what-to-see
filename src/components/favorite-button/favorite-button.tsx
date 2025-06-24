@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import { AppRoute, AuthorizationStatus } from '../../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { getFavoriteFilms } from '../../store/slices/favorite-films/selectors';
+import { getAllFavoriteFilms } from '../../store/slices/favorite-films/selectors';
 import { getAuthStatus } from '../../store/slices/login/selectors';
 import { Navigate, useParams } from 'react-router-dom';
 import { getPromoFilm } from '../../store/slices/promo-film/selectors';
-// import { replaceFilm } from '../../store/slices/favorite-films/actions';
 import { addFavoriteFilm } from '../../store/slices/api-actions';
 import { getCurrentFilm } from '../../store/slices/current-film/selectors';
 import { changeIsFavoriteCurrentFilm } from '../../store/slices/current-film/actions';
+import { setFavoritePromoFilm } from '../../store/slices/promo-film/actions';
 
 export default function FavoriteButton() {
   let {id} = useParams<string>();
   const dispatch = useAppDispatch();
-  const favoriteFilms = useAppSelector(getFavoriteFilms);
+  const favoriteFilms = useAppSelector(getAllFavoriteFilms);
   const promoFilm = useAppSelector(getPromoFilm);
   const currentFilm = useAppSelector(getCurrentFilm);
   let isFavorite = currentFilm.isFavorite;
@@ -29,6 +29,8 @@ export default function FavoriteButton() {
     if (!id) {
       id = promoFilm.id;
       isFavorite = promoFilm.isFavorite;
+
+      dispatch(setFavoritePromoFilm());
     }
 
     dispatch(addFavoriteFilm({id, isFavorite}));

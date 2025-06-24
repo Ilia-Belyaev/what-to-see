@@ -5,4 +5,4 @@ import { FavoriteFilms } from '../../../types/models';
 
 const takeFavoriteFilms = (state: Pick<State, NameSpace.Favorite>) => state[NameSpace.Favorite].favoriteFilms;
 
-export const getFavoriteFilms = createSelector([takeFavoriteFilms], (films: FavoriteFilms) => films);
+export const getAllFavoriteFilms = createSelector([takeFavoriteFilms], (films: FavoriteFilms) => films);
