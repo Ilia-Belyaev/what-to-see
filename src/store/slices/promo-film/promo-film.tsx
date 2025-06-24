@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace } from '../../../../constants';
 import { PromoFilm } from '../../../types/models';
-import { setPromoFilm } from './actions';
+import { setFavoritePromoFilm, setPromoFilm } from './actions';
 import { fetchPromoFilmAction } from '../api-actions';
 
 export const promoFilm = createSlice({
@@ -28,6 +28,9 @@ export const promoFilm = createSlice({
       .addCase(fetchPromoFilmAction.rejected, (state) => {
         state.hasError = true;
         state.isPromoLoaded = false;
+      })
+      .addCase(setFavoritePromoFilm, (state) => {
+        state.promo.isFavorite = !state.promo.isFavorite;
       });
   }
 });
