@@ -1,37 +1,27 @@
 import FooterLogo from '../../components/logo/footer-logo';
 import HeaderLogo from '../../components/logo/header-logo';
-// import { FavoriteFilms } from '../../types/models';
-// import MyListItem from '../../components/my-list/my-list-item';
+import LoginAuthMarkup from '../../components/login-markup/login-auth-markup';
+import FilmCard from '../../components/film-card/film-card';
+import { useAppSelector } from '../../hooks';
+import { getAllFavoriteFilms } from '../../store/slices/favorite-films/selectors';
 
-// type MyListProps = {
-//   films: FavoriteFilms;
-// }
 
-// export default function MyList({films}: MyListProps) {
 export default function MyList() {
+  const favoriteFilms = useAppSelector(getAllFavoriteFilms);
+
   return (
     <div className="user-page">
       <header className="page-header user-page__head">
         <HeaderLogo />
-
-        <h1 className="page-title user-page__title">My list <span className="user-page__film-count">9</span></h1>
-        <ul className="user-block">
-          <li className="user-block__item">
-            <div className="user-block__avatar">
-              <img src="img/avatar.jpg" alt="User avatar" width="63" height="63" />
-            </div>
-          </li>
-          <li className="user-block__item">
-            <a className="user-block__link">Sign out</a>
-          </li>
-        </ul>
+        <h1 className="page-title user-page__title">My list <span className="user-page__film-count">{favoriteFilms.length}</span></h1>
+        <LoginAuthMarkup />
       </header>
 
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
         <div className="catalog__films-list">
-          {/* {films.map((film) => <MyListItem film={film} key={film.id}/>)} */}
+          {favoriteFilms.map((film) => <FilmCard film={film} key={film.id}/>)}
         </div>
       </section>
 

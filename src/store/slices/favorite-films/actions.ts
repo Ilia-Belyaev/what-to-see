@@ -1,9 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
-import { FavoriteFilm, FavoriteFilms } from '../../../types/models';
+import { Film, Films } from '../../../types/models';
 
 
-export const setFavoriteFilms = createAction<FavoriteFilms>('favoriteFilm/addFavorite');
+export const setFavoriteFilms = createAction<Films>('favoriteFilm/addFavorite');
 
-export const removeFavoriteFilm = createAction<FavoriteFilm>('favoriteFilm/remove');
+export const removeFavoriteFilm = createAction<Film>('favoriteFilm/remove');
 
-export const setNewFavoriteFilm = createAction<FavoriteFilm>('favoriteFilm/addNewFavoriteFilm');
+export const setNewFavoriteFilm = createAction<Film>('favoriteFilm/addNewFavoriteFilm');

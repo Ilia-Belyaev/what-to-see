@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AuthData, CurrentFilm, CurrentFilmId, FavoriteFilm, FavoriteFilmData, FavoriteFilms, Films, PromoFilm, Review, Reviews, User, UserReview } from '../../types/models';
+import { AuthData, CurrentFilm, CurrentFilmId, FavoriteFilm, FavoriteFilmData, Films, PromoFilm, Review, Reviews, User, UserReview } from '../../types/models';
 import { AppDispatch, State } from '../../types/state';
 import { AxiosInstance } from 'axios';
 import { ApiRoute, AppRoute, ErrorMessages } from '../../../constants';
@@ -204,9 +204,9 @@ export const getFavoriteFilms = createAsyncThunk<void, undefined, {
   extra: AxiosInstance;
 }
 >(
-  'data/fetchFilmAction',
+  'data/fetchFavoriteFilmAction',
   async (_arg, {dispatch, extra: api}) => {
-    const {data} = await api.get<FavoriteFilms>(ApiRoute.Favorite);
+    const {data} = await api.get<Films>(ApiRoute.Favorite);
 
     dispatch(setFavoriteFilms(data));
   }

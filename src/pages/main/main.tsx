@@ -1,11 +1,6 @@
 import FilmCard from '../../components/film-card/film-card';
 import Genres from '../../components/genres/genres';
-// import LoginMarkup from '../../components/login-markup/login-markup';
 import FooterLogo from '../../components/logo/footer-logo';
-// import HeaderLogo from '../../components/logo/header-logo';
-// import PromoFilm from '../../components/promo-film/promo-film';
-// import { useAppSelector } from '../../hooks';
-// import { getPromoFilm } from '../../store/slices/promo-film/selectors';
 import { Films } from '../../types/models';
 import { MainFilmCardMemo } from './main-film-card';
 
