@@ -12,7 +12,8 @@ import ErrorScreen from '../../pages/error-screen/error-screen.tsx';
 import Loading from '../../pages/loading/loading.tsx';
 import { FilmHOC } from '../film-hoc/film-hoc.tsx';
 import { ReviewHOC } from '../../pages/review/review-hoc.tsx';
-import MyList from '../../pages/my-list/my-list.tsx';
+// import MyList from '../../pages/my-list/my-list.tsx';
+import { MyListHOC } from '../my-list-hoc/my-list-hoc.tsx';
 
 export default function App() {
   const auth = useAppSelector(getAuthStatus);
@@ -41,7 +42,7 @@ export default function App() {
         path={AppRoute.MyList}
         element={
           <PrivateRoute authorizationStatus={auth}>
-            <MyList />
+            <MyListHOC />
           </PrivateRoute>
         }
       />

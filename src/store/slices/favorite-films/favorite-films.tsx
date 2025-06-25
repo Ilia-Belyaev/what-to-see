@@ -1,14 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace } from '../../../../constants';
-import { FavoriteFilms } from '../../../types/models';
+import { Films } from '../../../types/models';
 import { setNewFavoriteFilm, removeFavoriteFilm, setFavoriteFilms } from './actions';
 import { addNewFavoriteFilm, setFavoriteFilm } from '../../../utils/utils';
-
 
 export const favoriteFilms = createSlice({
   name: NameSpace.Favorite,
   initialState: {
-    favoriteFilms: [] as FavoriteFilms,
+    favoriteFilms: [] as Films,
   },
   reducers:{},
   extraReducers: (builder) => {
