@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getCurrentReviews } from '../../store/slices/api-actions';
-import { getReviews } from '../../store/slices/reviews/selectors';
+import { getLoading } from '../../store/slices/reviews/selectors';
 import FilmCardInfo from './film-card-info';
 
 export const FilmCardInfoHOC = () => {
@@ -16,13 +16,13 @@ export const FilmCardInfoHOC = () => {
     }
   }, [id, dispatch]);
 
-  const currentReviews = useAppSelector(getReviews);
+  const isReviewLoaded = useAppSelector(getLoading);
 
   useEffect(() => {
-    if (currentReviews.length) {
+    if (!isReviewLoaded) {
       setReviews(false);
     }
-  }, [currentReviews]);
+  }, [isReviewLoaded]);
 
   if (reviews) {
     return;

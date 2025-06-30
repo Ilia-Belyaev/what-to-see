@@ -6,6 +6,7 @@ import ReviewButton from '../../components/review-button/review-button';
 import { NearFilmsMemo } from '../../components/near-films/near-films';
 import { CurrentFilm, Films } from '../../types/models';
 import { FilmCardInfoHOC } from '../../components/film-card-info/film-card-info-hoc';
+import PlayButton from '../../components/play-button/play-button';
 
 type FilmProps = {
   film: CurrentFilm;
@@ -14,7 +15,7 @@ type FilmProps = {
 
 export default function Film({film, similarFilms}: FilmProps) {
 
-  const {name, backgroundImage, backgroundColor, genre, released} = film;//videoLink isFavorite
+  const {name, backgroundImage, backgroundColor, genre, released, id} = film;
 
   return (
     <div>
@@ -41,12 +42,7 @@ export default function Film({film, similarFilms}: FilmProps) {
               </p>
 
               <div className="film-card__buttons">
-                <button className="btn btn--play film-card__button" type="button">
-                  <svg viewBox="0 0 19 19" width="19" height="19">
-                    <use xlinkHref="#play-s"></use>
-                  </svg>
-                  <span>Play</span>
-                </button>
+                <PlayButton id={id}/>
                 <FavoriteButton />
                 <ReviewButton />
               </div>
