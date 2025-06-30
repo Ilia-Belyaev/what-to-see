@@ -5,7 +5,6 @@ import { getFilmsWithCurrentGenre } from '../../store/slices/selectors';
 import { getVisibleFilms } from '../../store/slices/visible-films/selectors';
 import { setVisibleFilms } from '../../store/slices/visible-films/visible-films';
 import Main from '../../pages/main/main';
-import { dropCurrentFilm } from '../../store/slices/current-film/actions';
 
 export const MainScreenHOC = () => {
   const dispatch = useAppDispatch();
@@ -15,10 +14,6 @@ export const MainScreenHOC = () => {
   useEffect(() => {
     dispatch(setVisibleFilms(films.slice(0, FILMS_COUNT)));
   }, [films, dispatch]);
-
-  useEffect(() => {
-    dispatch(dropCurrentFilm());
-  }, [dispatch]);
 
 
   const showMore = () => {

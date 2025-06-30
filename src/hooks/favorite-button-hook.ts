@@ -40,6 +40,5 @@ export function useFavoriteButton() {
     onButtonClick,
     favoriteCount: favoriteFilms.length,
     isAuth: auth === AuthorizationStatus.Auth,
-    isFavorite: isFavorite,
   };
 }

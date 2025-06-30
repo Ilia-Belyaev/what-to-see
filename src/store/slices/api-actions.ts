@@ -127,7 +127,7 @@ export const checkAuthAction = createAsyncThunk<void, undefined, {
   },
 );
 
-export const getUserInfo = createAsyncThunk<void, undefined, {
+export const getUserData = createAsyncThunk<void, undefined, {
   dispatch: AppDispatch;
   state: State;
   extra: AxiosInstance;

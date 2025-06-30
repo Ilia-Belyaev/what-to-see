@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import {AppRoute, AuthorizationStatus} from '../../../constants.ts';
 import Login from '../../pages/login/login.tsx';
+import Player from '../../pages/player/player.tsx';
 import PrivateRoute from '../private-route/private-route.tsx';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen.tsx';
 import { useAppSelector } from '../../hooks/index.ts';
@@ -11,8 +12,8 @@ import ErrorScreen from '../../pages/error-screen/error-screen.tsx';
 import Loading from '../../pages/loading/loading.tsx';
 import { FilmHOC } from '../film-hoc/film-hoc.tsx';
 import { ReviewHOC } from '../../pages/review/review-hoc.tsx';
+// import MyList from '../../pages/my-list/my-list.tsx';
 import { MyListHOC } from '../my-list-hoc/my-list-hoc.tsx';
-import { PlayerHOC } from '../player-hoc/player-hoc.tsx';
 
 export default function App() {
   const auth = useAppSelector(getAuthStatus);
@@ -47,7 +48,7 @@ export default function App() {
       />
       <Route
         path={AppRoute.Player}
-        element={<PlayerHOC />}
+        element={<Player />}
       />
       <Route
         path={AppRoute.Film}
