@@ -7,7 +7,7 @@ import Review from './review';
 
 export const ReviewHOC = () => {
   const dispatch = useAppDispatch();
-  const {id} = useParams<string>();
+  const {id} = useParams<{id: string}>();
   const currentFilm = useAppSelector(getCurrentFilm);
 
   useEffect(() => {

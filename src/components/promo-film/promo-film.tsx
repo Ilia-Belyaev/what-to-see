@@ -1,10 +1,11 @@
 import { useAppSelector } from '../../hooks';
 import { getPromoFilm } from '../../store/slices/promo-film/selectors';
 import FavoriteButton from '../favorite-button/favorite-button';
+import PlayButton from '../play-button/play-button';
 
 export default function PromoFilm() {
   const promoFilm = useAppSelector(getPromoFilm);
-  const {name, posterImage, genre, released, videoLink} = promoFilm;
+  const {name, posterImage, genre, released, id} = promoFilm;
 
   return (
     <div className="film-card__wrap">
@@ -21,12 +22,7 @@ export default function PromoFilm() {
           </p>
 
           <div className="film-card__buttons">
-            <button className="btn btn--play film-card__button" type="button">
-              <svg viewBox="0 0 19 19" width="19" height="19">
-                <use xlinkHref={videoLink}></use>
-              </svg>
-              <span>Play</span>
-            </button>
+            <PlayButton id={id}/>
             <FavoriteButton />
           </div>
         </div>
